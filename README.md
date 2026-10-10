@@ -8,16 +8,7 @@ Mi portfolio personal: [mariopxz.com](https://mariopxz.com). Hecho con React, Ty
 - Vite
 - Tailwind CSS 4
 
-## Desarrollo
-
-```bash
-npm install
-npm run dev      # servidor local
-npm run build    # compila a dist/
-npm run lint
-```
-
-## Editar el contenido
+## Contenido
 
 Todo el texto está en `src/data.ts`: perfil, skills, experiencia, formación y proyectos. La interfaz está en `src/App.tsx` y los colores de cada tema en `src/index.css`.
 

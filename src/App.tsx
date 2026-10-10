@@ -291,7 +291,7 @@ export default function App() {
             <ul className="relative mt-14 flex flex-wrap gap-x-9 gap-y-4 border-t-[1.5px] border-line/20 pt-6">
               <li aria-hidden className="pointer-events-none absolute inset-x-0 -top-[58px] h-14">
                 <div className="animate-walk absolute bottom-0 h-7 w-12">
-                <span className="absolute bottom-full left-1/2 mb-1 -translate-x-1/2 bg-black/60 px-1.5 py-0.5 font-mono text-[10px] leading-none text-white">fred</span>
+                <span className="absolute bottom-full left-1/2 mb-1 -translate-x-1/2 bg-ink/60 px-1.5 py-0.5 font-mono text-[10px] leading-none text-bg">fred</span>
                 <svg viewBox="0 0 12 7" shapeRendering="crispEdges" className="animate-flip size-full [filter:drop-shadow(0_0_.6px_var(--ink))]">
                   <g className="fill-accent">
                     <rect x="2" y="0" width="8" height="5" />

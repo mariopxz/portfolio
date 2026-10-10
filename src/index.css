@@ -33,7 +33,8 @@ html { scroll-padding-top: 4.5rem; } /* el scroll suave de los enlaces # lo hace
 
 /* Mascota del hero: va y viene por la línea (flip al girar, mirando a la izquierda al principio); dos frames de patas alternos */
 @theme {
-  --animate-walk: walk 12s linear infinite alternate, flip 24s steps(1) infinite;
+  --animate-walk: walk 12s linear infinite alternate;
+  --animate-flip: flip 24s steps(1) infinite;
   --animate-leg-a: leg 0.5s steps(1) infinite;
   --animate-leg-b: leg 0.5s steps(1) -0.25s infinite;
   --animate-grid: grid 6s linear infinite;
@@ -43,7 +44,7 @@ html { scroll-padding-top: 4.5rem; } /* el scroll suave de los enlaces # lo hace
   @keyframes leg { 0% { opacity: 1; } 50% { opacity: 0; } }
 }
 @media (prefers-reduced-motion: reduce) {
-  .animate-grid, .animate-walk, .animate-leg-a, .animate-leg-b { animation: none; }
+  .animate-grid, .animate-walk, .animate-flip, .animate-leg-a, .animate-leg-b { animation: none; }
   .animate-leg-b { opacity: 0; }
 }
 

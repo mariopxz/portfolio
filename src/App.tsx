@@ -289,8 +289,10 @@ export default function App() {
               <a className="rounded-full border-[1.5px] border-dashed border-line/40 px-4 py-2 text-sm text-muted no-underline hover:bg-surface" href="#contact">Contacto</a>
             </div>
             <ul className="relative mt-14 flex flex-wrap gap-x-9 gap-y-4 border-t-[1.5px] border-line/20 pt-6">
-              <li aria-hidden className="pointer-events-none absolute inset-x-0 -top-[34px] h-8 overflow-hidden">
-                <svg viewBox="0 0 12 7" shapeRendering="crispEdges" className="animate-walk absolute bottom-0 h-7 w-12 [filter:drop-shadow(0_0_.6px_var(--ink))]">
+              <li aria-hidden className="pointer-events-none absolute inset-x-0 -top-[58px] h-14">
+                <div className="animate-walk absolute bottom-0 h-7 w-12">
+                <span className="absolute bottom-full left-1/2 mb-1 -translate-x-1/2 bg-black/60 px-1.5 py-0.5 font-mono text-[10px] leading-none text-white">fred</span>
+                <svg viewBox="0 0 12 7" shapeRendering="crispEdges" className="animate-flip size-full [filter:drop-shadow(0_0_.6px_var(--ink))]">
                   <g className="fill-accent">
                     <rect x="2" y="0" width="8" height="5" />
                     <rect x="0" y="2" width="2" height="2" />
@@ -300,6 +302,7 @@ export default function App() {
                   <g className="animate-leg-a fill-accent"><rect x="3" y="5" width="1" height="2" /><rect x="8" y="5" width="1" height="2" /><rect x="4" y="5" width="1" height="1" /><rect x="7" y="5" width="1" height="1" /></g>
                   <g className="animate-leg-b fill-accent"><rect x="4" y="5" width="1" height="2" /><rect x="7" y="5" width="1" height="2" /><rect x="3" y="5" width="1" height="1" /><rect x="8" y="5" width="1" height="1" /></g>
                 </svg>
+                </div>
               </li>
               {stats.map(s => (
                 <li key={s.label}><strong className="block text-3xl font-bold leading-none tracking-tight">{s.value}</strong><span className="mt-1.5 block font-mono text-[10px] uppercase tracking-widest text-muted">{s.label}</span></li>

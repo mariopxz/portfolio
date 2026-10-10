@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Tokens por tema; Tailwind los expone como bg-bg, text-ink, border-line, etc. */
+:root {
+  --bg: #f7f5ee; --surface: #fff; --ink: #161616; --muted: #161616bd;
+  --accent: #facc00; --accent-ink: #161616;
+  --g0: #16161614; --grid: #16161622; --grid-fine: #1616160d; --g1: #fbe27a; --g2: #facc00; --g3: #c49f00; --g4: #7a6200;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #121212; --surface: #1c1c1c; --ink: #f7f5ee; --muted: #f7f5eebd;
+  --g0: #f7f5ee14; --grid: #f7f5ee22; --grid-fine: #f7f5ee0d; --g1: #5c4c00; --g2: #a88800; --g3: #facc00; --g4: #ffe566;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-line: var(--ink);
+  --color-g0: var(--g0);
+  --color-g1: var(--g1);
+  --color-g2: var(--g2);
+  --color-g3: var(--g3);
+  --color-g4: var(--g4);
+}
+
+html { scroll-padding-top: 4.5rem; } /* el scroll suave de los enlaces # lo hace smoothAnchors() en App.tsx */
+
+/* Mascota del hero: va y viene por la línea (flip al girar, mirando a la izquierda al principio); dos frames de patas alternos */
+@theme {
+  --animate-walk: walk 12s linear infinite alternate, flip 24s steps(1) infinite;
+  --animate-leg-a: leg 0.5s steps(1) infinite;
+  --animate-leg-b: leg 0.5s steps(1) -0.25s infinite;
+  --animate-grid: grid 6s linear infinite;
+  @keyframes grid { to { background-position: -58px 0, -58px 0, -58px 0, -58px 0; } }
+  @keyframes walk { from { left: calc(100% - 3rem); } to { left: 0; } }
+  @keyframes flip { 50% { transform: scaleX(-1); } }
+  @keyframes leg { 0% { opacity: 1; } 50% { opacity: 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid, .animate-walk, .animate-leg-a, .animate-leg-b { animation: none; }
+  .animate-leg-b { opacity: 0; }
+}
+
+/* Oculta el cursor del sistema solo cuando <Cursor /> está activo (ratón) */
+.custom-cursor, .custom-cursor * { cursor: none !important; }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace,Menlo,monospace" font-size="22">
+  <rect width="800" height="500" fill="#101010"/>
+  <rect width="800" height="44" fill="#1a1a1a"/>
+  <circle cx="26" cy="22" r="7" fill="#ff5f57"/><circle cx="50" cy="22" r="7" fill="#febc2e"/><circle cx="74" cy="22" r="7" fill="#28c840"/>
+  <g fill="#575757"><text x="30" y="100">1</text><text x="30" y="140">2</text><text x="30" y="180">3</text><text x="30" y="220">4</text><text x="30" y="260">5</text><text x="30" y="300">6</text><text x="30" y="340">7</text></g>
+  <text x="80" y="100"><tspan fill="#ffc799">const</tspan><tspan fill="#ffffff"> theme </tspan><tspan fill="#a0a0a0">=</tspan><tspan fill="#ffffff"> {</tspan></text>
+  <text x="110" y="140"><tspan fill="#99ffe4">name</tspan><tspan fill="#a0a0a0">: </tspan><tspan fill="#ffc799">'Gesper'</tspan><tspan fill="#a0a0a0">,</tspan></text>
+  <text x="110" y="180"><tspan fill="#99ffe4">base</tspan><tspan fill="#a0a0a0">: </tspan><tspan fill="#ffc799">'Vesper'</tspan><tspan fill="#a0a0a0">,</tspan></text>
+  <text x="110" y="220"><tspan fill="#99ffe4">colors</tspan><tspan fill="#a0a0a0">: [</tspan><tspan fill="#facc00">'#facc00'</tspan><tspan fill="#a0a0a0">, </tspan><tspan fill="#ff8080">'#ff8080'</tspan><tspan fill="#a0a0a0">,</tspan></text>
+  <text x="110" y="260"><tspan fill="#99ffe4">         </tspan><tspan fill="#99ffe4">'#99ffe4'</tspan><tspan fill="#a0a0a0">],</tspan></text>
+  <text x="110" y="300"><tspan fill="#99ffe4">mood</tspan><tspan fill="#a0a0a0">: </tspan><tspan fill="#ffc799">'más color'</tspan></text>
+  <text x="80" y="340" fill="#ffffff">}</text>
+</svg>

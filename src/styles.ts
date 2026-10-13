@@ -1,0 +1,9 @@
+export const ease = 'ease-[cubic-bezier(.16,1,.3,1)]'
+export const btn = `inline-block cursor-pointer rounded-full border-2 border-line bg-surface px-5 py-2 font-medium text-ink no-underline shadow-[3px_3px_0_var(--ink)] transition duration-150 ${ease} hover:-translate-x-px hover:-translate-y-0.5 hover:shadow-[3px_4px_0_var(--ink)] active:translate-x-px active:translate-y-px active:shadow-[1px_1px_0_var(--ink)] motion-reduce:transition-none`
+export const btnIcon = `${btn} !inline-grid size-9 place-items-center !p-0`
+export const btnGo = `${btn} !bg-accent !text-accent-ink`
+export const card = `rounded-[14px] border-2 border-line bg-surface p-5 shadow-[6px_6px_0_var(--ink)] transition-shadow duration-200 ${ease} hover:shadow-[7px_7px_0_var(--accent),7px_7px_0_2px_var(--ink)]`
+export const eyebrow = 'font-mono text-xs uppercase tracking-widest text-muted'
+export const tag = 'rounded-lg border-[1.5px] border-line px-2.5 py-0.5 text-sm'
+export const band = 'border-y-2 border-line'
+export const links = [['about', 'Sobre mí'], ['skills', 'Skills'], ['experience', 'Experiencia'], ['work', 'Proyectos'], ['education', 'Formación'], ['github', 'GitHub'], ['contact', 'Contacto']]

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, Outlet, useLocation } from 'react-router'
 import { profile } from './data'
-import { btn, btnIcon, ease, eyebrow, links } from './styles'
+import { btn, btnIcon, ease, eyebrow, links, pages } from './styles'
 
 
 // Scroll animado (ease in-out) para los enlaces #ancla; se cancela si el usuario hace scroll
@@ -149,9 +149,8 @@ export function Layout() {
     return () => removeEventListener('scroll', on)
   }, [])
 
-  const shop = pathname === '/products'
   return (
-    <div className="min-h-screen bg-bg font-sans leading-relaxed text-ink">
+    <div className="flex min-h-svh flex-col bg-bg font-sans leading-relaxed text-ink">
       <Cursor />
       <a className="absolute -left-[999px] z-[80] bg-accent px-4 py-2 text-accent-ink focus:left-0" href="#main">
         Saltar al contenido
@@ -164,7 +163,10 @@ export function Layout() {
             {links.filter(([id]) => id !== 'contact').map(([id, label]) => (
               <Anchor key={id} id={id} className="py-1 no-underline hover:text-ink hover:underline">{label}</Anchor>
             ))}
-            <Link to="/products" aria-current={shop ? 'page' : undefined} className={`py-1 no-underline hover:text-ink hover:underline ${shop ? 'font-bold text-ink' : ''}`}>Productos</Link>
+            {pages.map(([to, label]) => {
+              const on = pathname === to || pathname.startsWith(to + '/')
+              return <Link key={to} to={to} aria-current={on ? 'page' : undefined} className={`py-1 no-underline hover:text-ink hover:underline ${on ? 'font-bold text-ink' : ''}`}>{label}</Link>
+            })}
           </nav>
           <button className={btnIcon} onClick={toggle}
             aria-label={dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}>
@@ -185,24 +187,26 @@ export function Layout() {
         <div onClick={() => setMenu(false)}
           className={`absolute inset-0 bg-black/50 transition-opacity duration-300 motion-reduce:transition-none ${menu ? 'opacity-100' : 'opacity-0'}`} />
         <aside id="drawer" inert={!menu} aria-label="Menú"
-          className={`absolute inset-y-0 right-0 flex w-[88vw] max-w-sm flex-col border-l-2 border-line bg-bg p-5 transition-transform duration-300 ${ease} motion-reduce:transition-none ${menu ? 'translate-x-0' : 'translate-x-full'}`}>
+          className={`absolute inset-y-0 right-0 flex w-[88vw] max-w-sm flex-col overflow-y-auto overscroll-contain border-l-2 border-line bg-bg p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] transition-transform duration-300 ${ease} motion-reduce:transition-none ${menu ? 'translate-x-0' : 'translate-x-full'}`}>
           <button className={`${btnIcon} ml-auto`} onClick={() => setMenu(false)} aria-label="Cerrar menú">✕</button>
-          <nav aria-label="Móvil" className="mt-8 flex flex-col">
+          <nav aria-label="Móvil" className="mt-4 flex flex-col">
             {links.map(([id, label], i) => (
               <Anchor key={id} id={id} onClick={() => setMenu(false)}
-                className="border-b-[1.5px] border-line/15 py-4 text-3xl font-bold no-underline hover:text-muted">
+                className="border-b-[1.5px] border-line/15 py-[clamp(.5rem,1.9svh,1rem)] text-[clamp(1.25rem,3.8svh,1.875rem)] font-bold leading-tight no-underline hover:text-muted">
                 <span className={`${eyebrow} mr-3`}>0{i + 1}</span>{label}
               </Anchor>
             ))}
-            <Link to="/products" onClick={() => setMenu(false)}
-              className="border-b-[1.5px] border-line/15 py-4 text-3xl font-bold no-underline hover:text-muted">
-              <span className={`${eyebrow} mr-3`}>0{links.length + 1}</span>Productos
-            </Link>
+            {pages.map(([to, label], i) => (
+              <Link key={to} to={to} onClick={() => setMenu(false)}
+                className="border-b-[1.5px] border-line/15 py-[clamp(.5rem,1.9svh,1rem)] text-[clamp(1.25rem,3.8svh,1.875rem)] font-bold leading-tight no-underline hover:text-muted">
+                <span className={`${eyebrow} mr-3`}>0{links.length + 1 + i}</span>{label}
+              </Link>
+            ))}
           </nav>
         </aside>
       </div>
 
-      <main id="main"><Outlet /></main>
+      <main id="main" className="flex-1"><Outlet /></main>
 
       <footer className="border-t-[1.5px] border-line/20 bg-[color-mix(in_srgb,var(--ink)_14%,var(--bg))] text-[.8125rem] text-muted">
         <div className="mx-auto flex max-w-2xl flex-wrap justify-between gap-x-6 gap-y-2 px-5 py-6">

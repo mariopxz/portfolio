@@ -7,3 +7,6 @@ export const eyebrow = 'font-mono text-xs uppercase tracking-widest text-muted'
 export const tag = 'rounded-lg border-[1.5px] border-line px-2.5 py-0.5 text-sm'
 export const band = 'border-y-2 border-line'
 export const links = [['about', 'Sobre mí'], ['skills', 'Skills'], ['experience', 'Experiencia'], ['work', 'Proyectos'], ['education', 'Formación'], ['github', 'GitHub'], ['contact', 'Contacto']]
+
+// Páginas aparte (no son anclas de la home) que salen en la cabecera y el menú móvil
+export const pages = [['/products', 'Productos'], ['/blog', 'Blog']]

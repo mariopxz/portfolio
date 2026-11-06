@@ -168,9 +168,9 @@ export default function App() {
 
     <Section id="experience" eyebrow="Experiencia" title="Dónde he trabajado" tint={`${band} bg-surface`}>
       <ol className="grid gap-6">
-        {experience.map((e, i) => (
+        {experience.map(e => (
           <li key={e.company} className={card}>
-            <p className={eyebrow}>0{i + 1} / {e.period} · {e.place}</p>
+            <p className={eyebrow}>{e.period} · {e.place}{e.mode && ` · ${e.mode}`}</p>
             <h3 className="mt-1 text-2xl font-bold">{e.role}</h3>
             <p className="font-medium text-muted">{e.company}</p>
             <ul className="mt-3 list-disc space-y-1 pl-5 text-muted">{e.points.map(t => <li key={t}>{t}</li>)}</ul>
@@ -182,14 +182,14 @@ export default function App() {
 
     <Section id="work" eyebrow="Proyectos" title="Cosas que merece la pena abrir" tint={`${band} bg-line/10`}>
       <div className="grid gap-16 sm:gap-24">
-        {projects.map((p, i) => (
+        {projects.map(p => (
           <article key={p.title} className="grid items-center gap-6 md:grid-cols-[1.05fr_.95fr] md:gap-16">
             <a href={p.demo ?? p.code} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden
               className="block aspect-[16/10] overflow-hidden rounded-[14px] border-2 border-line bg-surface p-2 shadow-[8px_8px_0_var(--ink)] transition duration-300 ease-[cubic-bezier(.16,1,.3,1)] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[11px_11px_0_var(--ink)] motion-reduce:transition-none sm:p-3 md:order-2">
               <img src={p.image} alt="" loading="lazy" className="size-full rounded-md object-cover object-top" />
             </a>
             <div>
-              <p className="text-[.8125rem] tracking-widest text-muted">0{i + 1} / {p.year} · {p.kind}</p>
+              <p className="text-[.8125rem] tracking-widest text-muted">{p.year} · {p.kind}</p>
               <h3 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">{p.title}</h3>
               <p className="mt-2 text-lg text-muted">{p.tag}</p>
               <p className="mt-4 max-w-[46ch] text-muted">{p.desc}</p>

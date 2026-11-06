@@ -15,20 +15,38 @@ export const profile = {
 export const since = 2023 // primer repo en GitHub y arranque de DAW
 
 // Cada tecnología usa public/logos/<logo>.svg; los logos negros van en monoLogos para invertirlos en modo oscuro
-export const monoLogos = ['github', 'vercel', 'express', 'railway', 'resend']
+export const monoLogos = ['github', 'vercel', 'express', 'railway', 'resend', 'render']
 export const skills: Record<string, [name: string, logo: string][]> = {
-  Lenguajes: [['JavaScript', 'javascript'], ['TypeScript', 'typescript'], ['PHP', 'php'], ['HTML', 'html5'], ['CSS', 'css3'], ['SCSS', 'sass']],
+  Lenguajes: [['JavaScript', 'javascript'], ['TypeScript', 'typescript'], ['Python', 'python'], ['PHP', 'php'], ['HTML', 'html5'], ['CSS', 'css3'], ['SCSS', 'sass']],
   Frameworks: [['React', 'react'], ['Node.js', 'nodejs'], ['Express.js', 'express'], ['Tailwind CSS', 'tailwindcss'], ['Bootstrap', 'bootstrap'], ['Vite', 'vitejs']],
-  'Bases de datos': [['MySQL', 'mysql'], ['PostgreSQL', 'postgresql']],
-  'Cloud y DevOps': [['Git', 'git'], ['GitHub', 'github'], ['Vercel', 'vercel'], ['Railway', 'railway'], ['Supabase', 'supabase'], ['Resend', 'resend']],
+  'Bases de datos': [['MySQL', 'mysql'], ['PostgreSQL', 'postgresql'], ['Aiven', 'aiven']],
+  'Cloud y DevOps': [['Git', 'git'], ['GitHub', 'github'], ['Vercel', 'vercel'], ['Railway', 'railway'], ['Render', 'render'], ['Supabase', 'supabase'], ['Firebase', 'firebase'], ['Resend', 'resend']],
+  'Datos e integración': [['Salesforce', 'salesforce'], ['Power BI', 'powerbi']],
 }
 
 export const experience = [
+  {
+    company: 'ESCAC – Escola Superior de Cinema i Audiovisuals de Catalunya',
+    role: 'Desarrollador Full Stack',
+    period: '10/2026 – Actualidad',
+    place: 'Terrassa',
+    mode: 'Presencial', // Presencial, Remoto o Híbrido; opcional
+    points: [
+      'Modernización y optimización de aplicaciones web e infraestructura digital.',
+      'Desarrollo y migración de aplicaciones web con React, Vite y Node.js.',
+      'Soluciones serverless con Firebase y Python.',
+      'Automatización e integración de datos mediante la API de Salesforce y APIs REST.',
+      'Gestión de bases de datos, servicios cloud y Cloud Functions.',
+      'Informes y paneles de datos con Power BI.',
+    ],
+    stack: ['React', 'Vite', 'Node.js', 'Firebase', 'Python', 'Salesforce', 'Power BI'],
+  },
   {
     company: 'Hörmann España',
     role: 'Técnico de Service',
     period: '07/2025 – 06/2026',
     place: 'Terrassa',
+    mode: 'Presencial',
     points: ['Diagnóstico y resolución de incidencias técnicas en puertas industriales.', 'Montaje y mantenimiento de equipos en las instalaciones de los clientes.'],
     stack: [],
   },
@@ -37,6 +55,7 @@ export const experience = [
     role: 'Desarrollador Full Stack',
     period: '09/2024 – 06/2025',
     place: 'Sant Cugat',
+    mode: 'Presencial',
     points: [
       'Desarrollo de una nueva plataforma para clientes con React, Node.js y MySQL.',
       'Mejora de la experiencia de usuario de la web corporativa con HTML, CSS, JavaScript y PHP.',
